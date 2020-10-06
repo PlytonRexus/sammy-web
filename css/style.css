@@ -463,7 +463,8 @@ body.offcanvas {
 
 .hire {
   padding: 2em;
-  background: #f9bf3f; }
+  background: #f9bf3f; 
+}
   .hire h2 {
     line-height: 1.5; }
   .hire .btn-hire {
@@ -955,8 +956,8 @@ body.offcanvas {
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
-  height: 300px;
-  width: 100%;
+  height: 800px;
+  width: 105%;
   display: block;
   margin-bottom: 30px; }
   .project .desc {
