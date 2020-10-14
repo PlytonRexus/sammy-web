@@ -66,6 +66,7 @@
 					<ul>
 						<li class="active"><a href="#" data-nav-section="home">Introduction</a></li>
 						<li><a href="#about" data-nav-section="about">Problem</a></li>
+                        <li><a href="#about" data-nav-section="demo">Demo</a></li>
 						<li><a href="#education" data-nav-section="education">Samples</a></li>
 						<li><a href="#experience" data-nav-section="experience">Setting Up a Demo</a></li>
 						<li><a href="#work" data-nav-section="work">Screenshots</a></li>
@@ -161,6 +162,70 @@
 				</div>
 			</section>
 
+            <section class="colorlib-hero" data-section="demo">
+                <div class="colorlib-narrow-content">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+                        <span class="heading-meta">Try with your own video</span>
+                        <h2 class="colorlib-heading animate-box">API Demo</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="animate-box" data-animate-effect="fadeInLeft">
+                        <p>
+                            Please make sure that any video that you supply:
+                            <ol>
+                                <li>Is <em>less than 30 seconds</em> long</li>
+                                <li>Does <em>not</em> have a size greater than 4 MB</li>
+                                <li>Is wrapped in the MP4 cntainer, i.e., has the <code>.mp4</code> file extension</li>
+                                <li>Has a bright, outdoor scenes, uses people and not weird animated characters</li>
+                                <li>Does not hve a frame rate higher than 30 fps</li>
+                            </ol>
+                        </p>
+                        <p>
+                            You'll be taken to page that shows you a JSON response. Though very much human-readable, this response is best understood by Sammy (the Android App).
+                        </p>
+                        <p>
+                            If there is no response even after 3-4 minutes of waiting time, there likely was some processing issue. (An error log might be found in the Developer's Console.) You can try again with the same video or use another one of lesser size and duration.
+                        </p>
+                        <p>
+                            The accuracy can be fairly low and several scenes might go unnoticed by the system. We are trying to improve that.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <h5>
+                        1. Upload your video
+                    </h5>
+                    <form action="https://sammy-web.herokuapp.com/vid/up" method="POST" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
+                        <div>
+                            <input type="file" id="myFile" name="video" style="width: 300px; margin: 5px;" accept="mp4" required>
+                        </div>
+                        <div>
+                            <input type="submit" style="margin: 5px;">
+                        </div>
+                    </form>
+                </div>
+                <hr>
+                <div class="row">
+                    <h5>
+                        2. Or, Put in a link
+                    </h5>
+                    <p>
+                        The link has to be of a video, do not use the link of a webpage that contains the video. Also, it should be accessible via the <code>HTTPS</code> protocol. For example, use: <a href="https://example.com/video.mp4">https://example.com/video.mp4</a> and not <a href="http://example.com/video">http://example.com/video</a>
+                    </p>
+                    <form action="https://sammy-web.herokuapp.com/vid/sd" method="GET" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
+                        <div>
+                            <input type="url" class="colorlib-input" name="url" style="margin: 5px;width: 300px;" required>
+                        </div>
+                        <div>
+                            <input type="submit" style="margin: 5px;">
+                        </div>
+                    </form>
+                </div>    
+                </div>
+            </section>
+
 			<section class="colorlib-education" data-section="education" id="education">
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -194,7 +259,7 @@
 									        	<h3>SDD and OCR Output:</h3>
 									        	<p>
 									        		<code>
- {
+{
   captions: [
     { time: 4738, captions: 'the photo is in the background' },
     { time: 16550, captions: 'the people are sitting on the bench' },
@@ -1166,6 +1231,14 @@
 					</div> -->
 				</div>
 			</section>
+
+            <section class="colorlib-work">
+                <div class="row" style="text-align: center;">
+                    <!-- <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft" style="text-align: center;"> -->
+                        <h4 style="font-family: monospace;">Thanks for your time!</h4>
+                    <!-- </div> -->
+                </div>
+            </section>
 
 		</div><!-- end:colorlib-main -->
 	</div><!-- end:container-wrap -->
