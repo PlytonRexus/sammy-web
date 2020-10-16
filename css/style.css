@@ -405,8 +405,9 @@ body.offcanvas {
 .colorlib-work,
 .colorlib-about,
 .colorlib-services,
-.colorlib-contact {
-  padding-top: 4em;
+.colorlib-contact,
+.colorlib-demo {
+  /*padding-top: 4em;*/
   padding-bottom: 9em;
   clear: both;
   width: 100%;
@@ -1456,3 +1457,26 @@ body.offcanvas {
 
 .js .animate-box {
   opacity: 0; }
+
+.json {
+  background: rgb(110, 110, 110);
+  padding: 10px;
+  color: white;
+}
+
+.form-title {
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+input {
+  border: 1px dashed gray;
+  outline: none;
+  transition: all 0.4s;
+}
+
+input:focus, input:hover {
+  background: yellow;
+  border: none;
+  border-bottom: 1px solid gray;
+}

@@ -91,19 +91,19 @@
 					   			<div class="col-md-5 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
 					   				<div class="slider-text-inner js-fullheight">
 					   					<div class="desc">
-						   					<h1> Watch videos, <br> without seeing.</h1>
-						   					<h2 style="color:">We are enabling the optically disabled to navigate and enjoy videos while making it searchable for everyone.</h2>
+						   					<h1 style="font-size: 50px">Sammy, an advanced video player</h1>
+						   					<h2 style="color:black">That enables understanding of videos for the visually-disabled and quicker navigation for everyone</h2>
 												<p><a href="https://github.com/PlytonRexus/sammy-node" class="btn btn-primary btn-learn"> GitHub Repository - Node <i class="icon-briefcase3"></i></a></p>
 												<p><a href="https://github.com/myselfpawanraj/sammy-android" class="btn btn-primary btn-learn"> GitHub Repository - Android <i class="icon-briefcase3"></i></a></p>
 
 										</div>
 					   				</div>
 					   			</div>
-					   			<div class="col-md-6 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+					   			<div class="col-md-5 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
 					   				<div class="slider-text-inner">
-					   					<div class="desc">
-											<h2>We built Sammy, a multimedia player that can help you find anything in a video and also explain that video to you.</h2>
-											<h2>Sammy uses OCR (Optical Character Recognition), ASR (Automatic Speech Recognition) and Scene Understanding to create machine readable data that can describe the scene taking place in the video and allow searching through this information.</h2>
+					   					<div class="desc" style="width: 110%">
+											<h2>Sammy is a multimedia player that can help you find, in a video, anything from a simple phrase that was spoken to a scene that you can describe in words.</h2>
+											<h2>We combined OCR (Optical Character Recognition), ASR (Automatic Speech Recognition) and Scene Understanding (SDD) to describe the scene taking place in the video and to make this information searchable.</h2>
 											<p><a href="https://drive.google.com/file/d/1woIJtMJtPbP5A1NyyBZibR0dvYEGzjdJ/view?usp=sharing" class="btn btn-primary btn-learn">Proof of Concept <i class="icon-download4"></i></a></p>
                                             <p><a href="images/sammy-debug.apk" download class="btn btn-primary btn-learn" style="background: #2c98f0 !important;">Download Android App <i class="icon-download4"></i></a></p>
 											</div>
@@ -112,22 +112,6 @@
 					   		</div>
 				   		</div>
 				   	</li>
-				   	<!-- <li style="background: black;">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h2 style="color: white">In trying to create a more accessible video environment through Computer Vision for people that cannot or would not watch video:</h2>
-											<h2 style="color: white">We built Sammy, a multimedia player that can help you find anything in a video besides explaining it.</h2>
-											<p><a style="color: white; border: 1px solid white" class="btn btn-primary btn-learn">Proof of Concept <i class="icon-briefcase3"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li> -->
 				  	</ul>
 			  	</div>
 			</section>
@@ -142,7 +126,7 @@
 										<span class="heading-meta">Problem</span>
 										<h2 class="colorlib-heading">What are we solving?</h2>
 										<!-- <h3>Vision</h3> -->
-										<p>We want to create a world where even specially-enabled people are able to understand and navigate through video content and where nobody has to spend ages searching for a single line in hour-long videos.</p>
+										<p>Imagine a world where even specially-enabled people are able to understand and navigate through video content and where nobody has to spend ages searching for a single line in hour-long videos.</p>
 
 										<!-- <h3>Statement</h3> -->
 										<p>
@@ -162,7 +146,7 @@
 				</div>
 			</section>
 
-            <section class="colorlib-hero" data-section="demo">
+            <section class="colorlib-hero colorlib-demo" data-section="demo">
                 <div class="colorlib-narrow-content">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
@@ -173,7 +157,7 @@
                 <div class="row">
                     <div class="animate-box" data-animate-effect="fadeInLeft">
                         <p>
-                            Please make sure that any video that you supply:
+                            The demo for this web API has been hosted on Heroku. This curtails our ability to process reuests for longer than 30 seconds. Thus, for a successful response, please ensure that any video that you supply:
                             <ol>
                                 <li>Is <em>less than 30 seconds</em> long</li>
                                 <li>Does <em>not</em> have a size greater than 4 MB</li>
@@ -181,6 +165,11 @@
                                 <li>Has a bright, outdoor scenes, uses people and not weird animated characters</li>
                                 <li>Does not hve a frame rate higher than 30 fps</li>
                             </ol>
+                        </p>
+                        <p>
+                        	<strong>
+                        		The video samples used below may not work (if used in your requests) as their response was calculated locally in a timeout-free environment.
+                        	</strong>
                         </p>
                         <p>
                             You'll be taken to page that shows you a JSON response. Though very much human-readable, this response is best understood by Sammy (the Android App).
@@ -194,10 +183,43 @@
                     </div>
                 </div>
                 <div class="row">
+                	<h4 class="form-title"> Scene Description and Optical Character Recognition (SDD and OCR)</h4>
                     <h5>
                         1. Upload your video
                     </h5>
                     <form action="https://sammy-web.herokuapp.com/vid/up" method="POST" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
+                        <div>
+                            <input type="file" id="myFile" name="video" style="width: 300px; margin: 5px;" accept="mp4" required>
+                        </div>
+                        <div>
+                            <input type="submit" style="margin: 5px;">
+                        </div>
+                    </form>
+                </div>
+            	<hr>
+                <div class="row">
+                    <h5>
+                        2. Or, Put in a link
+                    </h5>
+                    <p>
+                        The link has to be of a video, do not use the link of a webpage that contains the video. Also, it should be accessible via the <code>HTTPS</code> protocol. For example, use: <a href="https://example.com/video.mp4">https://example.com/video.mp4</a> and not <a href="http://example.com/video">http://example.com/video</a> without trailing slashes (<code>/</code>).
+                    </p>
+                    <form action="http://localhost:8080/vid" method="GET" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
+                        <div>
+                            <input type="url" class="colorlib-input" name="url" style="margin: 5px;width: 300px;" required>
+                        </div>
+                        <div>
+                            <input type="submit" style="margin: 5px;">
+                        </div>
+                    </form>
+                </div>
+                <hr>
+                <div class="row">
+                	<h4 class="form-title">Transcription (ASR)</h4>
+                    <h5>
+                        1. Upload your video
+                    </h5>
+                    <form action="https://sammy-aud.herokuapp.com/vid" method="POST" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
                         <div>
                             <input type="file" id="myFile" name="video" style="width: 300px; margin: 5px;" accept="mp4" required>
                         </div>
@@ -212,9 +234,9 @@
                         2. Or, Put in a link
                     </h5>
                     <p>
-                        The link has to be of a video, do not use the link of a webpage that contains the video. Also, it should be accessible via the <code>HTTPS</code> protocol. For example, use: <a href="https://example.com/video.mp4">https://example.com/video.mp4</a> and not <a href="http://example.com/video">http://example.com/video</a>
+                        The link has to be of a video, do not use the link of a webpage that contains the video. Also, it should be accessible via the <code>HTTPS</code> protocol. For example, use: <a href="https://example.com/video.mp4">https://example.com/video.mp4</a> and not <a href="http://example.com/video">http://example.com/video</a> without trailing slashes (<code>/</code>).
                     </p>
-                    <form action="https://sammy-web.herokuapp.com/vid/sd" method="GET" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
+                    <form action="https://sammy-aud.herokuapp.com/vid" method="GET" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
                         <div>
                             <input type="url" class="colorlib-input" name="url" style="margin: 5px;width: 300px;" required>
                         </div>
@@ -257,501 +279,15 @@
 									         </div>
 									         <div class="panel-body">
 									        	<h3>SDD and OCR Output:</h3>
-									        	<p>
-									        		<code>
-{
-  captions: [
-    { time: 4738, captions: 'the photo is in the background' },
-    { time: 16550, captions: 'the people are sitting on the bench' },
-    { time: 27561, captions: 'a white wall' },
-    { time: 34935, captions: 'the road is wet' },
-    { time: 45078, captions: 'the wall is white' },
-    { time: 45112, captions: 'the picture is on the ground' },
-    { time: 45145, captions: 'the picture is black' },
-    { time: 48382, captions: 'the picture is on the wall' },
-    { time: 48415, captions: 'the photo is taken in the photo' },
-    { time: 53187, captions: 'a picture of a building' },
-    { time: 57958, captions: 'the sky is clear' },
-    { time: 62529, captions: 'the photo is taken in the day' },
-    { time: 67868, captions: 'a man in a black shirt' },
-    { time: 75542, captions: 'the picture is black and white' },
-    { time: 85519, captions: 'the road is made of metal' },
-    { time: 91859, captions: 'the photo is taken in the air' },
-    { time: 99433, captions: 'the snow is white' },
-    { time: 99466, captions: 'the picture is on the ground' },
-    { time: 110177, captions: 'a man is sitting in a car' },
-    { time: 111678, captions: 'the photo is taken in the photo' },
-    { time: 121955, captions: 'the picture is black and white' },
-    { time: 121989, captions: 'the picture is in the photo' },
-    { time: 123156, captions: 'the picture is black and white' },
-    { time: 137738, captions: 'the picture is black and white' },
-    { time: 141942, captions: 'the picture is in the air' },
-    { time: 146313, captions: 'the photo is taken in the air' },
-    { time: 146346, captions: 'the picture is in the photo' },
-    { time: 150417, captions: 'the picture is black and white' },
-    { time: 1200, captions: 'the picture is in the photo' }
-  ],
-  ocr: [
-    { time: 4738, ocr: ' \n\f' },
-    { time: 16550, ocr: ' \n\f' },
-    { time: 27561, ocr: ' \n\f' },
-    { time: 34935, ocr: ' \n\f' },
-    { time: 45078, ocr: ' \n\f' },
-    { time: 45112, ocr: ' \n\f' },
-    { time: 45145, ocr: 'The Crash\n\f' },
-    { time: 48382, ocr: 'The Crash\n\f' },
-    { time: 48415, ocr: ' \n\f' },
-    { time: 53187, ocr: ' \n\f' },
-    { time: 57958, ocr: ' \n\f' },
-    { time: 62529, ocr: ' \n\f' },
-    { time: 67868, ocr: ' \n\f' },
-    { time: 75542, ocr: ' \n\f' },
-    { time: 85519, ocr: ' \n\f' },
-    { time: 91859, ocr: ' \n\f' },
-    { time: 99433, ocr: ' \n\f' },
-    { time: 99466, ocr: ' \n\f' },
-    { time: 110177, ocr: ' \n\f' },
-    { time: 111678, ocr: ' \n\f' },
-    { time: 121955, ocr: ' \n\f' },
-    { time: 121989, ocr: ' \n\f' },
-    { time: 123156, ocr: ' \n\f' },
-    { time: 137738, ocr: ' \n\f' },
-    { time: 141942, ocr: ' \n\f' },
-    { time: 146313, ocr: ' \n\f' },
-    { time: 146346, ocr: ' \n\f' },
-    { time: 150417, ocr: ' \n\f' },
-    { time: 1200, ocr: ' \n\f' }
-  ]
-}
+									        	<p class="json">
+									        		<code class="json">
+{captions:[{time:4738,captions:"the photo is in the background"},{time:16550,captions:"the people are sitting on the bench"},{time:27561,captions:"a white wall"},{time:34935,captions:"the road is wet"},{time:45078,captions:"the wall is white"},{time:45112,captions:"the picture is on the ground"},{time:45145,captions:"the picture is black"},{time:48382,captions:"the picture is on the wall"},{time:48415,captions:"the photo is taken in the photo"},{time:53187,captions:"a picture of a building"},{time:57958,captions:"the sky is clear"},{time:62529,captions:"the photo is taken in the day"},{time:67868,captions:"a man in a black shirt"},{time:75542,captions:"the picture is black and white"},{time:85519,captions:"the road is made of metal"},{time:91859,captions:"the photo is taken in the air"},{time:99433,captions:"the snow is white"},{time:99466,captions:"the picture is on the ground"},{time:110177,captions:"a man is sitting in a car"},{time:111678,captions:"the photo is taken in the photo"},{time:121955,captions:"the picture is black and white"},{time:121989,captions:"the picture is in the photo"},{time:123156,captions:"the picture is black and white"},{time:137738,captions:"the picture is black and white"},{time:141942,captions:"the picture is in the air"},{time:146313,captions:"the photo is taken in the air"},{time:146346,captions:"the picture is in the photo"},{time:150417,captions:"the picture is black and white"},{time:1200,captions:"the picture is in the photo"}],ocr:[{time:4738,ocr:" \n\f"},{time:16550,ocr:" \n\f"},{time:27561,ocr:" \n\f"},{time:34935,ocr:" \n\f"},{time:45078,ocr:" \n\f"},{time:45112,ocr:" \n\f"},{time:45145,ocr:"The Crash\n\f"},{time:48382,ocr:"The Crash\n\f"},{time:48415,ocr:" \n\f"},{time:53187,ocr:" \n\f"},{time:57958,ocr:" \n\f"},{time:62529,ocr:" \n\f"},{time:67868,ocr:" \n\f"},{time:75542,ocr:" \n\f"},{time:85519,ocr:" \n\f"},{time:91859,ocr:" \n\f"},{time:99433,ocr:" \n\f"},{time:99466,ocr:" \n\f"},{time:110177,ocr:" \n\f"},{time:111678,ocr:" \n\f"},{time:121955,ocr:" \n\f"},{time:121989,ocr:" \n\f"},{time:123156,ocr:" \n\f"},{time:137738,ocr:" \n\f"},{time:141942,ocr:" \n\f"},{time:146313,ocr:" \n\f"},{time:146346,ocr:" \n\f"},{time:150417,ocr:" \n\f"},{time:1200,ocr:" \n\f"}]}									
 									        		</code>
 									        	</p>
 									        	<h3>ASR Output:</h3>
-									        	<p>
-									        		<code>
-{
-    "file":
-    {
-        "length": 155.008,
-        "savedAs": null
-    },
-    "words": [
-    {
-        "time": 0,
-        "word": "no"
-    },
-    {
-        "time": 7.659999847412109,
-        "word": "bigland"
-    },
-    {
-        "time": 8.539999961853027,
-        "word": "the"
-    },
-    {
-        "time": 8.639999389648438,
-        "word": "wind"
-    },
-    {
-        "time": 8.920000076293945,
-        "word": "begins"
-    },
-    {
-        "time": 9.300000190734863,
-        "word": "to"
-    },
-    {
-        "time": 9.460000038146973,
-        "word": "speak"
-    },
-    {
-        "time": 9.699999809265137,
-        "word": "with"
-    },
-    {
-        "time": 9.84000015258789,
-        "word": "a"
-    },
-    {
-        "time": 9.960000038146973,
-        "word": "roar"
-    },
-    {
-        "time": 10.260000228881836,
-        "word": "that"
-    },
-    {
-        "time": 10.4399995803833,
-        "word": "no"
-    },
-    {
-        "time": 10.699999809265137,
-        "word": "man"
-    },
-    {
-        "time": 10.960000038146973,
-        "word": "had"
-    },
-    {
-        "time": 11.25999927520752,
-        "word": "tailorbird"
-    },
-    {
-        "time": 18.440000534057617,
-        "word": "bottomly"
-    },
-    {
-        "time": 19.600000381469727,
-        "word": "like"
-    },
-    {
-        "time": 19.85999870300293,
-        "word": "a"
-    },
-    {
-        "time": 19.939998626708984,
-        "word": "river"
-    },
-    {
-        "time": 20.239999771118164,
-        "word": "in"
-    },
-    {
-        "time": 20.31999969482422,
-        "word": "a"
-    },
-    {
-        "time": 20.520000457763672,
-        "word": "feeling"
-    },
-    {
-        "time": 21.85999870300293,
-        "word": "believe"
-    },
-    {
-        "time": 22.19999885559082,
-        "word": "papa"
-    },
-    {
-        "time": 22.899999618530273,
-        "word": "and"
-    },
-    {
-        "time": 23,
-        "word": "let"
-    },
-    {
-        "time": 23.219999313354492,
-        "word": "him"
-    },
-    {
-        "time": 23.439998626708984,
-        "word": "put"
-    },
-    {
-        "time": 23.959999084472656,
-        "word": "it"
-    },
-    {
-        "time": 24.079999923706055,
-        "word": "i"
-    },
-    {
-        "time": 24.19999885559082,
-        "word": "do"
-    },
-    {
-        "time": 24.34000015258789,
-        "word": "do"
-    },
-    {
-        "time": 24.619998931884766,
-        "word": "now"
-    },
-    {
-        "time": 29.65999984741211,
-        "word": "ethelstane"
-    },
-    {
-        "time": 36.13999938964844,
-        "word": "giant"
-    },
-    {
-        "time": 36.439998626708984,
-        "word": "table"
-    },
-    {
-        "time": 36.81999969482422,
-        "word": "of"
-    },
-    {
-        "time": 36.939998626708984,
-        "word": "the"
-    },
-    {
-        "time": 37.05999755859375,
-        "word": "portable"
-    },
-    {
-        "time": 38.13999938964844,
-        "word": "of"
-    },
-    {
-        "time": 38.29999923706055,
-        "word": "sixteen"
-    },
-    {
-        "time": 39.619998931884766,
-        "word": "planeteers"
-    },
-    {
-        "time": 64.37999725341797,
-        "word": "own"
-    },
-    {
-        "time": 64.72000122070312,
-        "word": "forecastle"
-    },
-    {
-        "time": 65.72000122070312,
-        "word": "that"
-    },
-    {
-        "time": 65.87999725341797,
-        "word": "the"
-    },
-    {
-        "time": 65.97999572753906,
-        "word": "drivers"
-    },
-    {
-        "time": 67,
-        "word": "as"
-    },
-    {
-        "time": 67.18000030517578,
-        "word": "a"
-    },
-    {
-        "time": 67.31999969482422,
-        "word": "big"
-    },
-    {
-        "time": 67.63999938964844,
-        "word": "giant"
-    },
-    {
-        "time": 68.05999755859375,
-        "word": "like"
-    },
-    {
-        "time": 68.27999877929688,
-        "word": "a"
-    },
-    {
-        "time": 68.33999633789062,
-        "word": "nightmare"
-    },
-    {
-        "time": 68.86000061035156,
-        "word": "of"
-    },
-    {
-        "time": 68.93999481201172,
-        "word": "a"
-    },
-    {
-        "time": 69.19999694824219,
-        "word": "aberrating"
-    },
-    {
-        "time": 72.08000183105469,
-        "word": "correlation"
-    },
-    {
-        "time": 78.75999450683594,
-        "word": "of"
-    },
-    {
-        "time": 78.93999481201172,
-        "word": "amber"
-    },
-    {
-        "time": 80.23999786376953,
-        "word": "the"
-    },
-    {
-        "time": 80.33999633789062,
-        "word": "few"
-    },
-    {
-        "time": 80.47999572753906,
-        "word": "minutes"
-    },
-    {
-        "time": 80.73999786376953,
-        "word": "in"
-    },
-    {
-        "time": 80.9000015258789,
-        "word": "which"
-    },
-    {
-        "time": 81.0999984741211,
-        "word": "the"
-    },
-    {
-        "time": 81.27999877929688,
-        "word": "salivating"
-    },
-    {
-        "time": 86.29999542236328,
-        "word": "in"
-    },
-    {
-        "time": 86.4000015258789,
-        "word": "a"
-    },
-    {
-        "time": 86.5199966430664,
-        "word": "balance"
-    },
-    {
-        "time": 88.68000030517578,
-        "word": "will"
-    },
-    {
-        "time": 88.91999816894531,
-        "word": "yearning"
-    },
-    {
-        "time": 90.18000030517578,
-        "word": "for"
-    },
-    {
-        "time": 90.45999908447266,
-        "word": "palisadoes"
-    },
-    {
-        "time": 115.81999969482422,
-        "word": "of"
-    },
-    {
-        "time": 115.93999481201172,
-        "word": "feeling"
-    },
-    {
-        "time": 116.37999725341797,
-        "word": "contemplating"
-    },
-    {
-        "time": 120.41999816894531,
-        "word": "nationalities"
-    },
-    {
-        "time": 136.6199951171875,
-        "word": "of"
-    },
-    {
-        "time": 136.9199981689453,
-        "word": "the"
-    },
-    {
-        "time": 137.0399932861328,
-        "word": "palate"
-    },
-    {
-        "time": 137.5399932861328,
-        "word": "deportment"
-    },
-    {
-        "time": 138.9199981689453,
-        "word": "was"
-    },
-    {
-        "time": 139.05999755859375,
-        "word": "the"
-    },
-    {
-        "time": 139.22000122070312,
-        "word": "use"
-    },
-    {
-        "time": 139.4199981689453,
-        "word": "of"
-    },
-    {
-        "time": 139.5399932861328,
-        "word": "solitude"
-    },
-    {
-        "time": 140.55999755859375,
-        "word": "others"
-    },
-    {
-        "time": 140.89999389648438,
-        "word": "dipper"
-    },
-    {
-        "time": 141.59999084472656,
-        "word": "at"
-    },
-    {
-        "time": 141.72000122070312,
-        "word": "whatever"
-    },
-    {
-        "time": 142,
-        "word": "the"
-    },
-    {
-        "time": 142.1199951171875,
-        "word": "reason"
-    },
-    {
-        "time": 142.6999969482422,
-        "word": "to"
-    },
-    {
-        "time": 142.9199981689453,
-        "word": "come"
-    },
-    {
-        "time": 143.239990234375,
-        "word": "will"
-    },
-    {
-        "time": 143.47999572753906,
-        "word": "rebuild"
-    },
-    {
-        "time": 144.39999389648438,
-        "word": "the"
-    },
-    {
-        "time": 144.67999267578125,
-        "word": "firebell"
-    },
-    {
-        "time": 145.75999450683594,
-        "word": "not"
-    },
-    {
-        "time": 146,
-        "word": "provide"
-    },
-    {
-        "time": 146.52000427246094,
-        "word": "a"
-    },
-    {
-        "time": 146.66000366210938,
-        "word": "super"
-    },
-    {
-        "time": 147.1999969482422,
-        "word": "trainmen"
-    }]
-}
+									        	<p class="json">
+									        		<code class="json">
+{file:{length:155.008,savedAs:null},words:[{time:0,word:"no"},{time:7.659999847412109,word:"bigland"},{time:8.539999961853027,word:"the"},{time:8.639999389648438,word:"wind"},{time:8.920000076293945,word:"begins"},{time:9.300000190734863,word:"to"},{time:9.460000038146973,word:"speak"},{time:9.699999809265137,word:"with"},{time:9.84000015258789,word:"a"},{time:9.960000038146973,word:"roar"},{time:10.260000228881836,word:"that"},{time:10.4399995803833,word:"no"},{time:10.699999809265137,word:"man"},{time:10.960000038146973,word:"had"},{time:11.25999927520752,word:"tailorbird"},{time:18.440000534057617,word:"bottomly"},{time:19.600000381469727,word:"like"},{time:19.85999870300293,word:"a"},{time:19.939998626708984,word:"river"},{time:20.239999771118164,word:"in"},{time:20.31999969482422,word:"a"},{time:20.520000457763672,word:"feeling"},{time:21.85999870300293,word:"believe"},{time:22.19999885559082,word:"papa"},{time:22.899999618530273,word:"and"},{time:23,word:"let"},{time:23.219999313354492,word:"him"},{time:23.439998626708984,word:"put"},{time:23.959999084472656,word:"it"},{time:24.079999923706055,word:"i"},{time:24.19999885559082,word:"do"},{time:24.34000015258789,word:"do"},{time:24.619998931884766,word:"now"},{time:29.65999984741211,word:"ethelstane"},{time:36.13999938964844,word:"giant"},{time:36.439998626708984,word:"table"},{time:36.81999969482422,word:"of"},{time:36.939998626708984,word:"the"},{time:37.05999755859375,word:"portable"},{time:38.13999938964844,word:"of"},{time:38.29999923706055,word:"sixteen"},{time:39.619998931884766,word:"planeteers"},{time:64.37999725341797,word:"own"},{time:64.72000122070312,word:"forecastle"},{time:65.72000122070312,word:"that"},{time:65.87999725341797,word:"the"},{time:65.97999572753906,word:"drivers"},{time:67,word:"as"},{time:67.18000030517578,word:"a"},{time:67.31999969482422,word:"big"},{time:67.63999938964844,word:"giant"},{time:68.05999755859375,word:"like"},{time:68.27999877929688,word:"a"},{time:68.33999633789062,word:"nightmare"},{time:68.86000061035156,word:"of"},{time:68.93999481201172,word:"a"},{time:69.19999694824219,word:"aberrating"},{time:72.08000183105469,word:"correlation"},{time:78.75999450683594,word:"of"},{time:78.93999481201172,word:"amber"},{time:80.23999786376953,word:"the"},{time:80.33999633789062,word:"few"},{time:80.47999572753906,word:"minutes"},{time:80.73999786376953,word:"in"},{time:80.9000015258789,word:"which"},{time:81.0999984741211,word:"the"},{time:81.27999877929688,word:"salivating"},{time:86.29999542236328,word:"in"},{time:86.4000015258789,word:"a"},{time:86.5199966430664,word:"balance"},{time:88.68000030517578,word:"will"},{time:88.91999816894531,word:"yearning"},{time:90.18000030517578,word:"for"},{time:90.45999908447266,word:"palisadoes"},{time:115.81999969482422,word:"of"},{time:115.93999481201172,word:"feeling"},{time:116.37999725341797,word:"contemplating"},{time:120.41999816894531,word:"nationalities"},{time:136.6199951171875,word:"of"},{time:136.9199981689453,word:"the"},{time:137.0399932861328,word:"palate"},{time:137.5399932861328,word:"deportment"},{time:138.9199981689453,word:"was"},{time:139.05999755859375,word:"the"},{time:139.22000122070312,word:"use"},{time:139.4199981689453,word:"of"},{time:139.5399932861328,word:"solitude"},{time:140.55999755859375,word:"others"},{time:140.89999389648438,word:"dipper"},{time:141.59999084472656,word:"at"},{time:141.72000122070312,word:"whatever"},{time:142,word:"the"},{time:142.1199951171875,word:"reason"},{time:142.6999969482422,word:"to"},{time:142.9199981689453,word:"come"},{time:143.239990234375,word:"will"},{time:143.47999572753906,word:"rebuild"},{time:144.39999389648438,word:"the"},{time:144.67999267578125,word:"firebell"},{time:145.75999450683594,word:"not"},{time:146,word:"provide"},{time:146.52000427246094,word:"a"},{time:146.66000366210938,word:"super"},{time:147.1999969482422,word:"trainmen"}]}
 									        		</code>
 									        	</p>
 									        </div>
@@ -773,83 +309,15 @@
 									        </div>
 									        <div class="panel-body">
 									        	<h3>SDD and OCR Output:</h3>
-									        	<p>
-									        		<code>
-{
-  captions: [
-    { time: 1200, captions: 'the background is black' },
-    { time: 13833, captions: 'a man is looking at the camera' },
-    { time: 15500, captions: 'a man is holding a dog' },
-    { time: 20542, captions: 'two men are smiling' },
-    { time: 20583, captions: 'two men are standing' },
-    { time: 23458, captions: 'a man is standing' },
-    { time: 30132, captions: 'the background is black' },
-    { time: 32238, captions: 'the background is black' }
-  ],
-  ocr: [
-    { time: 1200, ocr: '2006 - In a shady alleyway somewhere in Amsterdam...\n\f' },
-    { time: 13833, ocr: ' \n\f' },
-    { time: 15500, ocr: ' \n\f' },
-    { time: 20542, ocr: ' \n\f' },
-    { time: 20583, ocr: ' \n\f' },
-    { time: 23458, ocr: ' \n\f' },
-    { time: 30132, ocr: ' \n\f' },
-    { time: 32238, ocr: 'celebrating 10 years of oqen movies\n\f'}
-  ]
-}
+									        	<p class="json">
+									        		<code class="json">
+{captions:[{time:1200,captions:"the background is black"},{time:13833,captions:"a man is looking at the camera"},{time:15500,captions:"a man is holding a dog"},{time:20542,captions:"two men are smiling"},{time:20583,captions:"two men are standing"},{time:23458,captions:"a man is standing"},{time:30132,captions:"the background is black"},{time:32238,captions:"the background is black"}],ocr:[{time:1200,ocr:"2006 - In a shady alleyway somewhere in Amsterdam...\n\f"},{time:13833,ocr:" \n\f"},{time:15500,ocr:" \n\f"},{time:20542,ocr:" \n\f"},{time:20583,ocr:" \n\f"},{time:23458,ocr:" \n\f"},{time:30132,ocr:" \n\f"},{time:32238,ocr:"celebrating 10 years of oqen movies\n\f"}]}
 									        		</code>
 									        	</p>
 									        	<h3>ASR Output:</h3>
-									        	<p>
-									        		<code>
-{
-  file: { length: 37.012625, savedAs: null },
-  words: [
-    { time: 2.319999933242798, word: 'demo' },
-    { time: 3.119999885559082, word: 'closed' },
-    { time: 3.559999942779541, word: 'reyes' },
-    { time: 5.139999866485596, word: 'why' },
-    { time: 5.519999980926514, word: 'now' },
-    { time: 6, word: 'okay' },
-    { time: 7.759999752044678, word: 'good' },
-    { time: 10.059999465942383, word: 'what' },
-    { time: 10.199999809265137, word: 'do' },
-    { time: 10.34000015258789, word: 'you' },
-    { time: 10.460000038146973, word: 'see' },
-    { time: 10.59999942779541, word: 'at' },
-    { time: 10.699999809265137, word: 'your' },
-    { time: 10.859999656677246, word: 'left' },
-    { time: 11.239999771118164, word: 'side' },
-    { time: 11.5, word: 'maillotins' },
-    { time: 15.880000114440918, word: 'really' },
-    { time: 17.5, word: 'no' },
-    { time: 17.719999313354492, word: 'nothing' },
-    { time: 17.979999542236328, word: 'at' },
-    { time: 18.139999389648438, word: 'all' },
-    { time: 18.639999389648438, word: 'really' },
-    { time: 19.239999771118164, word: 'and' },
-    { time: 19.85999870300293, word: 'and' },
-    { time: 19.959999084472656, word: 'at' },
-    { time: 20.119998931884766, word: 'your' },
-    { time: 20.34000015258789, word: 'right' },
-    { time: 20.69999885559082, word: 'what' },
-    { time: 20.939998626708984, word: 'do' },
-    { time: 21.059999465942383, word: 'you' },
-    { time: 21.15999984741211, word: 'see' },
-    { time: 21.299999237060547, word: 'at' },
-    { time: 21.420000076293945, word: 'your' },
-    { time: 21.600000381469727, word: 'right' },
-    { time: 21.899999618530273, word: 'side' },
-    { time: 22.239999771118164, word: 'o' },
-    { time: 24.68000030517578, word: 'the' },
-    { time: 24.85999870300293, word: 'same' },
-    { time: 25.139999389648438, word: 'project' },
-    { time: 27.219999313354492, word: 'de' },
-    { time: 27.3799991607666, word: 'same' },
-    { time: 27.959999084472656, word: 'nothing' },
-    { time: 29.5, word: 'great' }
-  ]
-}
+									        	<p class="json">
+									        		<code class="json">
+{file:{length:37.012625,savedAs:null},words:[{time:2.319999933242798,word:"demo"},{time:3.119999885559082,word:"closed"},{time:3.559999942779541,word:"reyes"},{time:5.139999866485596,word:"why"},{time:5.519999980926514,word:"now"},{time:6,word:"okay"},{time:7.759999752044678,word:"good"},{time:10.059999465942383,word:"what"},{time:10.199999809265137,word:"do"},{time:10.34000015258789,word:"you"},{time:10.460000038146973,word:"see"},{time:10.59999942779541,word:"at"},{time:10.699999809265137,word:"your"},{time:10.859999656677246,word:"left"},{time:11.239999771118164,word:"side"},{time:11.5,word:"maillotins"},{time:15.880000114440918,word:"really"},{time:17.5,word:"no"},{time:17.719999313354492,word:"nothing"},{time:17.979999542236328,word:"at"},{time:18.139999389648438,word:"all"},{time:18.639999389648438,word:"really"},{time:19.239999771118164,word:"and"},{time:19.85999870300293,word:"and"},{time:19.959999084472656,word:"at"},{time:20.119998931884766,word:"your"},{time:20.34000015258789,word:"right"},{time:20.69999885559082,word:"what"},{time:20.939998626708984,word:"do"},{time:21.059999465942383,word:"you"},{time:21.15999984741211,word:"see"},{time:21.299999237060547,word:"at"},{time:21.420000076293945,word:"your"},{time:21.600000381469727,word:"right"},{time:21.899999618530273,word:"side"},{time:22.239999771118164,word:"o"},{time:24.68000030517578,word:"the"},{time:24.85999870300293,word:"same"},{time:25.139999389648438,word:"project"},{time:27.219999313354492,word:"de"},{time:27.3799991607666,word:"same"},{time:27.959999084472656,word:"nothing"},{time:29.5,word:"great"}]}
 									        		</code>
 									        	</p>
 									        </div>
@@ -871,101 +339,15 @@
 									        </div>
 									        <div class="panel-body">
 									        	<h3>SDD and OCR Output:</h3>
-									        	<p>
-									        		<code>
+									        	<p class="json">
+									        		<code class="json">
 {"error": "Video too long for the processing capacity of this computer."}
 									        		</code>
 									        	</p>
 									        	<h3>ASR Output:</h3>
-									        	<p>
-									        		<code>
-{
-  file: { length: 245.295625, savedAs: null },
-  words: [
-    { time: 1.7799999713897705, word: "let's" },
-    { time: 21.119998931884766, word: 'go' },
-    { time: 21.399999618530273, word: 'back' },
-    { time: 21.639999389648438, word: 'to' },
-    { time: 21.85999870300293, word: 'nineteen' },
-    { time: 22.420000076293945, word: 'three' },
-    { time: 22.69999885559082, word: 'to' },
-    { time: 22.959999084472656, word: 'six' },
-    { time: 23.600000381469727, word: 'when' },
-    { time: 23.799999237060547, word: 'desisted' },
-    { time: 24.619998931884766, word: 'was' },
-    { time: 24.8799991607666, word: 'set' },
-    { time: 25.219999313354492, word: 'up' },
-    { time: 25.939998626708984, word: 'that' },
-    { time: 26.34000015258789, word: 'i' },
-    { time: 26.439998626708984, word: 'ganaderias' },
-    { time: 27.579999923706055, word: 'helen' },
-    { time: 27.939998626708984, word: 'witnessed' },
-    { time: 28.420000076293945, word: 'while' },
-    { time: 28.8799991607666, word: 'art' },
-    { time: 30.719999313354492, word: 'identified' },
-    { time: 31.53999900817871, word: 'by' },
-    { time: 31.69999885559082, word: 'its' },
-    { time: 31.959999084472656, word: 'logical' },
-    { time: 33.34000015258789, word: 'it' },
-    { time: 33.63999938964844, word: 'houses' },
-    { time: 34.23999786376953, word: 'to' },
-    { time: 34.47999954223633, word: 'the' },
-    { time: 34.779998779296875, word: 'oldest' },
-    { time: 35.18000030517578, word: 'department' },
-    { time: 35.91999816894531, word: 'of' },
-    { time: 36.119998931884766, word: 'piety' },
-    { time: 36.89999771118164, word: 'is' },
-    { time: 37.18000030517578, word: 'entanglement' },
-    { time: 38.779998779296875, word: 'of' },
-    { time: 39.02000045776367, word: 'mining' },
-    { time: 39.41999816894531, word: 'engineering' },
-    { time: 40.5, word: 'and' },
-    { time: 40.73999786376953, word: 'the' },
-    { time: 40.87999725341797, word: 'defilement' },
-    { time: 41.459999084472656, word: 'of' },
-    { time: 41.65999984741211, word: 'atlantic' },
-    { time: 64.54000091552734, word: 'cable' },
-    { time: 64.9000015258789, word: 'high' },
-    { time: 65.05999755859375, word: 'school' },
-    { time: 65.29999542236328, word: 'internet' },
-    { time: 65.69999694824219, word: 'tatiana' },
-    { time: 68.72000122070312, word: 'recalled' },
-    { time: 69.1199951171875, word: 'the' },
-    { time: 69.26000213623047, word: 'bidding' },
-    { time: 69.81999969482422, word: 'assentation' },
-    { time: 72.5999984741211, word: 'artistically' },
-    { time: 93.83999633789062, word: 'as' },
-    { time: 94.97999572753906, word: 'the' },
-    { time: 95.1199951171875, word: 'goldsmithing' },
-    { time: 98.1199951171875, word: 'intemperate' },
-    { time: 100.83999633789062, word: 'intention' },
-    { time: 137.77999877929688, word: 'of' },
-    { time: 137.87998962402344, word: 'of' },
-    { time: 138.39999389648438, word: 'his' },
-    { time: 139.05999755859375, word: 'operations' },
-    { time: 141.44000244140625, word: 'by' },
-    { time: 141.66000366210938, word: 'ordination' },
-    { time: 143.22000122070312, word: 'retired' },
-    { time: 143.59999084472656, word: 'oriathon' },
-    { time: 145, word: 'area' },
-    { time: 145.27999877929688, word: 'of' },
-    { time: 145.33999633789062, word: 'even' },
-    { time: 145.94000244140625, word: 'roderick' },
-    { time: 147.94000244140625, word: 'the' },
-    { time: 148.0399932861328, word: 'countryside' },
-    { time: 197.47999572753906, word: 'because' },
-    { time: 199.44000244140625, word: 'with' },
-    { time: 199.6599884033203, word: 'the' },
-    { time: 200.09999084472656, word: 'tidewater' },
-    { time: 203.13999938964844, word: 'opinionate' },
-    { time: 205.4199981689453, word: 'before' },
-    { time: 205.86000061035156, word: 'janetoun' },
-    { time: 207.5399932861328, word: 'imposible' },
-    { time: 208.09999084472656, word: 'started' },
-    { time: 208.739990234375, word: 'and' },
-    { time: 208.87998962402344, word: 'was' }
-  ]
-}
+									        	<p class="json">
+									        		<code class="json">
+{file:{length:245.295625,savedAs:null},words:[{time:1.7799999713897705,word:"let's"},{time:21.119998931884766,word:"go"},{time:21.399999618530273,word:"back"},{time:21.639999389648438,word:"to"},{time:21.85999870300293,word:"nineteen"},{time:22.420000076293945,word:"three"},{time:22.69999885559082,word:"to"},{time:22.959999084472656,word:"six"},{time:23.600000381469727,word:"when"},{time:23.799999237060547,word:"desisted"},{time:24.619998931884766,word:"was"},{time:24.8799991607666,word:"set"},{time:25.219999313354492,word:"up"},{time:25.939998626708984,word:"that"},{time:26.34000015258789,word:"i"},{time:26.439998626708984,word:"ganaderias"},{time:27.579999923706055,word:"helen"},{time:27.939998626708984,word:"witnessed"},{time:28.420000076293945,word:"while"},{time:28.8799991607666,word:"art"},{time:30.719999313354492,word:"identified"},{time:31.53999900817871,word:"by"},{time:31.69999885559082,word:"its"},{time:31.959999084472656,word:"logical"},{time:33.34000015258789,word:"it"},{time:33.63999938964844,word:"houses"},{time:34.23999786376953,word:"to"},{time:34.47999954223633,word:"the"},{time:34.779998779296875,word:"oldest"},{time:35.18000030517578,word:"department"},{time:35.91999816894531,word:"of"},{time:36.119998931884766,word:"piety"},{time:36.89999771118164,word:"is"},{time:37.18000030517578,word:"entanglement"},{time:38.779998779296875,word:"of"},{time:39.02000045776367,word:"mining"},{time:39.41999816894531,word:"engineering"},{time:40.5,word:"and"},{time:40.73999786376953,word:"the"},{time:40.87999725341797,word:"defilement"},{time:41.459999084472656,word:"of"},{time:41.65999984741211,word:"atlantic"},{time:64.54000091552734,word:"cable"},{time:64.9000015258789,word:"high"},{time:65.05999755859375,word:"school"},{time:65.29999542236328,word:"internet"},{time:65.69999694824219,word:"tatiana"},{time:68.72000122070312,word:"recalled"},{time:69.1199951171875,word:"the"},{time:69.26000213623047,word:"bidding"},{time:69.81999969482422,word:"assentation"},{time:72.5999984741211,word:"artistically"},{time:93.83999633789062,word:"as"},{time:94.97999572753906,word:"the"},{time:95.1199951171875,word:"goldsmithing"},{time:98.1199951171875,word:"intemperate"},{time:100.83999633789062,word:"intention"},{time:137.77999877929688,word:"of"},{time:137.87998962402344,word:"of"},{time:138.39999389648438,word:"his"},{time:139.05999755859375,word:"operations"},{time:141.44000244140625,word:"by"},{time:141.66000366210938,word:"ordination"},{time:143.22000122070312,word:"retired"},{time:143.59999084472656,word:"oriathon"},{time:145,word:"area"},{time:145.27999877929688,word:"of"},{time:145.33999633789062,word:"even"},{time:145.94000244140625,word:"roderick"},{time:147.94000244140625,word:"the"},{time:148.0399932861328,word:"countryside"},{time:197.47999572753906,word:"because"},{time:199.44000244140625,word:"with"},{time:199.6599884033203,word:"the"},{time:200.09999084472656,word:"tidewater"},{time:203.13999938964844,word:"opinionate"},{time:205.4199981689453,word:"before"},{time:205.86000061035156,word:"janetoun"},{time:207.5399932861328,word:"imposible"},{time:208.09999084472656,word:"started"},{time:208.739990234375,word:"and"},{time:208.87998962402344,word:"was"}]}
 									        		</code>
 									        	</p>
 									        </div>
