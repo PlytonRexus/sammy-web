@@ -104,7 +104,7 @@
 					   					<div class="desc" style="width: 110%">
 											<h2>Sammy is a multimedia player that can help you find, in a video, anything from a simple phrase that was spoken to a scene that you can describe in words.</h2>
 											<h2>We combined OCR (Optical Character Recognition), ASR (Automatic Speech Recognition) and Scene Understanding (SDD) to describe the scene taking place in the video and to make this information searchable.</h2>
-											<p><a href="https://drive.google.com/file/d/1woIJtMJtPbP5A1NyyBZibR0dvYEGzjdJ/view?usp=sharing" class="btn btn-primary btn-learn">Proof of Concept <i class="icon-download4"></i></a></p>
+											<p><a href="https://drive.google.com/file/d/1jY5qv8Wfk3W45IF8rJAU-TeNI_T6Je2H/view?usp=sharing" class="btn btn-primary btn-learn">Proof of Concept <i class="icon-download4"></i></a></p>
                                             <p><a href="images/sammy-debug.apk" download class="btn btn-primary btn-learn" style="background: #2c98f0 !important;">Download Android App <i class="icon-download4"></i></a></p>
 											</div>
 					   				</div>
@@ -219,7 +219,7 @@
                     <h5>
                         1. Upload your video
                     </h5>
-                    <form action="https://sammy-aud.herokuapp.com/vid" method="POST" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
+                    <form action="https://sammy-audio.herokuapp.com/vid" method="POST" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
                         <div>
                             <input type="file" id="myFile" name="video" style="width: 300px; margin: 5px;" accept="mp4" required>
                         </div>
@@ -236,7 +236,7 @@
                     <p>
                         The link has to be of a video, do not use the link of a webpage that contains the video. Also, it should be accessible via the <code>HTTPS</code> protocol. For example, use: <a href="https://example.com/video.mp4">https://example.com/video.mp4</a> and not <a href="http://example.com/video">http://example.com/video</a> without trailing slashes (<code>/</code>).
                     </p>
-                    <form action="https://sammy-aud.herokuapp.com/vid" method="GET" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
+                    <form action="https://sammy-audio.herokuapp.com/vid" method="GET" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
                         <div>
                             <input type="url" class="colorlib-input" name="url" style="margin: 5px;width: 300px;" required>
                         </div>
