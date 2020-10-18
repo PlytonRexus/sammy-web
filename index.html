@@ -68,9 +68,8 @@
 						<li><a href="#about" data-nav-section="about">Problem</a></li>
                         <li><a href="#about" data-nav-section="demo">Demo</a></li>
 						<li><a href="#education" data-nav-section="education">Samples</a></li>
-						<li><a href="#experience" data-nav-section="experience">Setting Up a Demo</a></li>
 						<li><a href="#work" data-nav-section="work">Screenshots</a></li>
-					</ul>
+						<li><a href="#experience" data-nav-section="experience">Setting Up a Demo</a></li>					</ul>
 				</div>
 			</nav>
 
@@ -93,7 +92,8 @@
 					   					<div class="desc">
 						   					<h1 style="font-size: 50px">Sammy, an advanced video player</h1>
 						   					<h2 style="color:black">That enables understanding of videos for the visually-disabled and quicker navigation for everyone</h2>
-												<p><a href="https://github.com/PlytonRexus/sammy-node" class="btn btn-primary btn-learn"> GitHub Repository - Node <i class="icon-briefcase3"></i></a></p>
+												<p><a href="https://github.com/PlytonRexus/sammy-node" class="btn btn-primary btn-learn"> GitHub Repository - Video - Node <i class="icon-briefcase3"></i></a></p>
+												<p><a href="https://github.com/PlytonRexus/sammy-node-audio" class="btn btn-primary btn-learn"> GitHub Repository - Audio - Node <i class="icon-briefcase3"></i></a></p>
 												<p><a href="https://github.com/myselfpawanraj/sammy-android" class="btn btn-primary btn-learn"> GitHub Repository - Android <i class="icon-briefcase3"></i></a></p>
 
 										</div>
@@ -104,8 +104,8 @@
 					   					<div class="desc" style="width: 110%">
 											<h2>Sammy is a multimedia player that can help you find, in a video, anything from a simple phrase that was spoken to a scene that you can describe in words.</h2>
 											<h2>We combined OCR (Optical Character Recognition), ASR (Automatic Speech Recognition) and Scene Understanding (SDD) to describe the scene taking place in the video and to make this information searchable.</h2>
-											<p><a href="https://drive.google.com/file/d/1jY5qv8Wfk3W45IF8rJAU-TeNI_T6Je2H/view?usp=sharing" class="btn btn-primary btn-learn">Proof of Concept <i class="icon-download4"></i></a></p>
-                                            <p><a href="images/sammy-debug.apk" download class="btn btn-primary btn-learn" style="background: #2c98f0 !important;">Download Android App <i class="icon-download4"></i></a></p>
+											<p><a href="https://drive.google.com/file/d/1jY5qv8Wfk3W45IF8rJAU-TeNI_T6Je2H/view?usp=sharing" class="btn btn-primary btn-learn" style="background:white !important;">Proof of Concept <i class="icon-download4"></i></a></p>
+                                            <p><a href="https://github.com/myselfpawanraj/sammy-android/releases/download/v0.0.25-alpha/app-debug.apk" download class="btn btn-primary btn-learn" style="background: #2c98f0 !important;">Download Android App <i class="icon-download4"></i></a></p>
 											</div>
 					   				</div>
 					   			</div>
@@ -138,7 +138,7 @@
 							</div>
 							<div class="row">
 								<video controls width="100%" height="auto" loop>
-									<source src="images/sm-pres.mp4">
+									<source src="images/sm-pres-trimmed.mp4">
 								</video>
 							</div>
 						</div>
@@ -159,7 +159,7 @@
                         <p>
                             The demo for this web API has been hosted on Heroku. This curtails our ability to process reuests for longer than 30 seconds. Thus, for a successful response, please ensure that any video that you supply:
                             <ol>
-                                <li>Is <em>less than 30 seconds</em> long</li>
+                                <li>Is <em>less than 15 seconds</em> long</li>
                                 <li>Does <em>not</em> have a size greater than 4 MB</li>
                                 <li>Is wrapped in the MP4 cntainer, i.e., has the <code>.mp4</code> file extension</li>
                                 <li>Has a bright, outdoor scenes, uses people and not weird animated characters</li>
@@ -179,6 +179,20 @@
                         </p>
                         <p>
                             The accuracy can be fairly low and several scenes might go unnoticed by the system. We are trying to improve that.
+                        </p>
+                        <p>
+                        	Some examples are (<code>click</code> to add/<code>CTRL + click</code> to access link):
+                        <ol>
+                        	<li>
+                        		Mask: <a href="https://youtu.be/pHEhNkHLFnU" class="example-links">https://youtu.be/pHEhNkHLFnU</a>
+                        	</li>
+                        	<li>
+                        		Lego Man: <a href="https://youtu.be/2RVdgjMJiFI" class="example-links">https://youtu.be/2RVdgjMJiFI</a>
+                        	</li>
+                        	<li>
+                        		Mickey Mouse: <a href="https://youtu.be/iqRubJ63nlA" class="example-links">https://youtu.be/iqRubJ63nlA</a>
+                        	</li>
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -203,10 +217,12 @@
                     </h5>
                     <p>
                         The link has to be of a video, do not use the link of a webpage that contains the video. Also, it should be accessible via the <code>HTTPS</code> protocol. For example, use: <a href="https://example.com/video.mp4">https://example.com/video.mp4</a> and not <a href="http://example.com/video">http://example.com/video</a> without trailing slashes (<code>/</code>).
+
+                        <strong>You can also use youtube links.</strong>
                     </p>
                     <form action="https://sammy-web.herokuapp.com/vid" method="GET" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
                         <div>
-                            <input type="url" class="colorlib-input" name="url" style="margin: 5px;width: 300px;" required>
+                            <input type="url" class="colorlib-input url-input" name="url" style="margin: 5px;width: 300px;" required>
                         </div>
                         <div>
                             <input type="submit" style="margin: 5px;">
@@ -235,10 +251,11 @@
                     </h5>
                     <p>
                         The link has to be of a video, do not use the link of a webpage that contains the video. Also, it should be accessible via the <code>HTTPS</code> protocol. For example, use: <a href="https://example.com/video.mp4">https://example.com/video.mp4</a> and not <a href="http://example.com/video">http://example.com/video</a> without trailing slashes (<code>/</code>).
+                        <strong>You can also use youtube links.</strong>
                     </p>
                     <form action="https://sammy-audio.herokuapp.com/vid" method="GET" enctype="multipart/form-data" style="display: flex;flex-direction: row;">
                         <div>
-                            <input type="url" class="colorlib-input" name="url" style="margin: 5px;width: 300px;" required>
+                            <input type="url" class="colorlib-input url-input" name="url" style="margin: 5px;width: 300px;" required>
                         </div>
                         <div>
                             <input type="submit" style="margin: 5px;">
@@ -357,6 +374,92 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</section>
+
+						<section class="colorlib-work" data-section="work" id="work">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">The Android App</span>
+							<h2 class="colorlib-heading animate-box">Screenshots</h2>
+						</div>
+					</div>
+					<!-- <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+						<div class="col-md-12">
+							<p class="work-menu"><span><a href="#" class="active">Graphic Design</a></span> <span><a href="#">Web Design</a></span> <span><a href="#">Software</a></span> <span><a href="#">Apps</a></span></p>
+						</div>
+					</div> -->
+					<div class="row">
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="project" style="background-image: url(images/img-1.png);">
+								<div class="desc">
+									<div class="con">
+										<h3>Opening</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="project" style="background-image: url(images/img-5.png);">
+								<div class="desc">
+									<div class="con">
+										<h3>Search results</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
+							<div class="project" style="background-image: url(images/img-3.png);">
+								<div class="desc">
+									<div class="con">
+										<h3>Scene describing</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+							<div class="project" style="background-image: url(images/img-4.png);">
+								<div class="desc">
+									<div class="con">
+										<h3>Voice search</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="project" style="background-image: url(images/img-6.png);">
+								<div class="desc">
+									<div class="con">
+										<h3>Automatically skip to content</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="project" style="background-image: url(images/img-2.png);">
+								<div class="desc">
+									<div class="con">
+										<h3>About Us Page</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="project" style="background-image: url(images/img-back.png); width: 215%; height: 370px;">
+								<div class="desc">
+									<div class="con">
+										<h3>Server side rendering</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="row">
+						<div class="col-md-12 animate-box">
+							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+						</div>
+					</div> -->
 				</div>
 			</section>
 
@@ -506,7 +609,7 @@
 					               <div class="timeline-label">
 					               	<h2><a href="#">Android App</a></h2>
 					                  <p>
-					                  	Download the app <a href="https://github.com/myselfpawanraj/sammy-android/">here</a>.
+					                  	Download the app <a href="https://github.com/myselfpawanraj/sammy-android/releases/download/v0.0.25-alpha/app-debug.apk">here</a>.
 					                  </p>
 
 					                  The app has an inbuilt test with a pre-compiled response.
@@ -528,96 +631,10 @@
 				</div>
 			</section>
 
-			<section class="colorlib-work" data-section="work" id="work">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">The Android App</span>
-							<h2 class="colorlib-heading animate-box">Screenshots</h2>
-						</div>
-					</div>
-					<!-- <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<p class="work-menu"><span><a href="#" class="active">Graphic Design</a></span> <span><a href="#">Web Design</a></span> <span><a href="#">Software</a></span> <span><a href="#">Apps</a></span></p>
-						</div>
-					</div> -->
-					<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/img-1.png);">
-								<div class="desc">
-									<div class="con">
-										<h3>Opening</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/img-5.png);">
-								<div class="desc">
-									<div class="con">
-										<h3>Search results</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-							<div class="project" style="background-image: url(images/img-3.png);">
-								<div class="desc">
-									<div class="con">
-										<h3>Scene describing</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<div class="project" style="background-image: url(images/img-4.png);">
-								<div class="desc">
-									<div class="con">
-										<h3>Voice search</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(images/img-6.png);">
-								<div class="desc">
-									<div class="con">
-										<h3>Automatically skip to content</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/img-2.png);">
-								<div class="desc">
-									<div class="con">
-										<h3>About Us Page</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(images/img-back.png); width: 215%; height: 370px;">
-								<div class="desc">
-									<div class="con">
-										<h3>Server side rendering</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- <div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
-						</div>
-					</div> -->
-				</div>
-			</section>
-
             <section class="colorlib-work">
                 <div class="row" style="text-align: center;">
                     <!-- <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft" style="text-align: center;"> -->
-                        <h4 style="font-family: monospace;">Thanks for your time!</h4>
+                        <h4 style="font-family: monospace;">Thank you for your time!</h4>
                     <!-- </div> -->
                 </div>
             </section>
@@ -640,7 +657,28 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- Counters -->
 	<script src="js/jquery.countTo.js"></script>
-	
+
+	<script>
+	(function() {
+		document.querySelectorAll(".example-links").forEach(el => {
+			el.addEventListener("click", (event) => {
+				event.preventDefault();
+				if (event.ctrlKey) {
+					window.open(event.target.getAttribute("href"));
+				} else {
+					document.querySelectorAll(".url-input").forEach(ele => {
+						ele.value = event.target.getAttribute("href");
+					});
+					const x = event.target.innerHTML;
+					event.target.innerHTML += " <code>Added, scroll to view</code>"
+					setTimeout(function() {
+						event.target.innerHTML = x;
+					}, 2000);
+				}
+			});
+		});
+	})();	
+	</script>
 	
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>

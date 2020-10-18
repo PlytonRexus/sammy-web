@@ -48,9 +48,9 @@ body {
 
 a {
   color: #2c98f0;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s; }
   a:hover, a:active, a:focus {
     color: black;
     background: yellow;
