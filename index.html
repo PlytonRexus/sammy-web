@@ -196,7 +196,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                 	<h4 class="form-title"> Scene Description and Optical Character Recognition (SDD and OCR)</h4>
                     <h5>
                         1. Upload your video
@@ -228,9 +228,12 @@
                             <input type="submit" style="margin: 5px;">
                         </div>
                     </form>
-                </div>
-                <hr>
+                </div> -->
                 <div class="row">
+                	<h4 class="form-title"> Scene Description and Optical Character Recognition (SDD and OCR)</h4>
+                	<iframe src="https://sm-web2.herokuapp.com/" frameborder="0" id="sd-frame" width="100%" height="620px">Scene describer hosted at: <a href="https://sm-web2.herokuapp.com/">https://sm-web2.herokuapp.com/</a></iframe>
+                </div>
+                <!-- <div class="row">
                 	<h4 class="form-title">Transcription (ASR)</h4>
                     <h5>
                         1. Upload your video
@@ -243,9 +246,9 @@
                             <input type="submit" style="margin: 5px;">
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <hr>
-                <div class="row">
+                <!-- <div class="row">
                     <h5>
                         2. Or, Put in a link
                     </h5>
@@ -261,7 +264,11 @@
                             <input type="submit" style="margin: 5px;">
                         </div>
                     </form>
-                </div>    
+                </div>     -->
+                <div class="row">
+                	<h4 class="form-title">Transcription (ASR)</h4>
+                	<iframe src="https://sammy-audio.herokuapp.com/" frameborder="0" id="sd-frame" width="100%" height="620px">Scene describer hosted at: <a href="https://sammy-audio.herokuapp.com/">https://sammy-audio.herokuapp.com/</a></iframe>
+                </div>
                 </div>
             </section>
 
@@ -669,6 +676,11 @@
 					document.querySelectorAll(".url-input").forEach(ele => {
 						ele.value = event.target.getAttribute("href");
 					});
+					// document
+					// 	.querySelector("#sd-frame")
+					// 	.querySelector("#sd-input")
+					// 	.value 
+					// 	= event.target.getAttribute("href");
 					const x = event.target.innerHTML;
 					event.target.innerHTML += " <code>Added, scroll to view</code>"
 					setTimeout(function() {
